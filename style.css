@@ -1,0 +1,111 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #f0f0f0;
+  background-color: #121212;
+  line-height: 1.6;
+}
+
+/* Header Section */
+header {
+  text-align: center;
+  padding: 50px 20px;
+  background: #1a1a1a;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header h1 span {
+  color: #f39c12;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-buttons .btn {
+  text-decoration: none;
+  background: #f39c12;
+  color: #121212;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.cta-buttons .btn:hover {
+  background: #d35400;
+}
+
+/* Section Styles */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  margin: 40px 0;
+}
+
+h2 {
+  text-align: center;
+  color: #f39c12;
+  margin-bottom: 20px;
+}
+
+.projects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+}
+
+.project-card h3 {
+  color: #f39c12;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #f39c12;
+  transition: color 0.3s;
+}
+
+.project-card a:hover {
+  color: #d35400;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+footer p {
+  margin: 0;
+}
