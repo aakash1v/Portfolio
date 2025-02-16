@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me - Aakash Kumar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Header Styling */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #1f1f1f;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #ffffff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #ff5722;
+      color: #ffffff;
+    }
+
+    .back-btn {
+      padding: 8px 15px;
+      background-color: #ff5722;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #ff784e;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    .contact-container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-size: 1rem;
+      color: #b0b0b0;
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 15px;
+      background-color: #2b2b2b;
+      color: white;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #888;
+    }
+
+    .submit-btn {
+      padding: 10px 20px;
+      background-color: #ff5722;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #ff784e;
+    }
+
+    #contact {
+      margin-top: 30px;
+    }
+
+    .container p {
+      font-size: 1rem;
+      color: #b0b0b0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+
+    ul li a {
+      color: #ff5722;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    ul li a:hover {
+      color: #ff784e;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with navigation -->
+  <header>
+    <div class="logo">Aakash Kumar</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="index.html" class="back-btn">Back</a>
+  </header>
+
+  <div class="contact-container">
+    <h2>Get in Touch</h2>
+    <form action="https://example.com/contact" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Social Links Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Let's connect and create something amazing together!</p>
+      <ul>
+        <li>
+          Email:
+          <a href="mailto:aakashkumarpy@gmail.com">aakashkumarpy@gmail.com</a>
+        </li>
+        <li>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/aakash-kumar-50751a249/"
+            target="_blank"
+            >linkedin.com/in/aakash-kumar-50751a249</a
+          >
+        </li>
+        <li>
+          GitHub:
+          <a href="https://github.com/aakash1v" target="_blank"
+            >github.com/aakash1v</a
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

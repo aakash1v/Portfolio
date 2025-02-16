@@ -1,0 +1,76 @@
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          /* background-color: #1fac55; */
+          background-image: url("../images/bg3.jpg");
+          background-size: contain;
+          background-attachment: fixed;
+          
+          color: #fff;
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+          position: relative;
+    
+  
+          color: white; /* White text */
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for better readability */
+          backdrop-filter: blur(10px); /* Blurs the background */
+          border-radius: 10px; /* Rounded corners for style */
+          height: 100vh;
+      
+        }
+        /* header styling  */
+        header{
+          height: 100vh;
+        }
+        header .container {
+          margin: auto;
+          width: 60%;
+          height: 400px;
+          display: flex;
+          align-items: center;
+          padding: 80px;
+        }
+        header img {
+          height: 100%;
+        }
+        header .content {
+          padding: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content:center;
+          height: 100%;
+        }
+        header .content h1, p{
+        margin-bottom: 20px;
+        }
+        header .content p{
+          backdrop-filter: blur(5000px);
+        }
+        header .content a{
+          text-decoration: none;
+          color: white;
+          border: 1px solid #fff;
+          border-radius: 20px;
+          padding: 4px 7px;
+        }
+        header .content a:hover{
+          background-color: antiquewhite;
+          color: black;
+        }
+
+        /* my main section ... */
+        #main{
+          padding: 20px 100px;
+        }
+        footer{
+          margin: 100px;
+          text-align: center;
+        }
+        
+/* contact css  */
+#contact{
+  padding: 20px 50px;
+
+}
