@@ -1,3 +1,4 @@
+/* General body styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #121212;
@@ -7,6 +8,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Header styling */
 header {
   padding: 20px;
   background-color: #1f1f1f;
@@ -14,15 +16,19 @@ header {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow items to wrap for small screens */
 }
-header a{
-    margin: 10px;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-    padding: 3px 5px ;
-    background-color: #ff5722;
+
+header a {
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  padding: 3px 5px;
+  background-color: #ff5722;
 }
+
 h1 {
   font-size: 2.5rem;
   margin: 0;
@@ -72,4 +78,62 @@ h1 {
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .project-container {
+    padding: 10px;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+
+  .project-card a.view-btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    padding: 10px;
+  }
+
+  .project-card h2 {
+    font-size: 1rem;
+  }
+
+  .project-card p {
+    font-size: 0.8rem;
+  }
+
+  .project-card a.view-btn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
 }
