@@ -136,7 +136,12 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
+  header .container{
+    width: auto;
+    padding-bottom: 20px;
+    /* height: auto; */
+  }
   header .content h1 {
     font-size: 20px;
   }
