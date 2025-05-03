@@ -1,0 +1,110 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %} Portfolio - Aakash Kumar {% endblock title %}    
+
+{% block hero %}
+<div class="container">
+  <img src="{% static 'core/images/profile2.png' %}" alt="Aakash Kumar" class="profile-image" />
+  <div class="content">
+    <h1>Hi, I'm <span>Aakash Kumar</span></h1>
+    <p>
+      Hi, I’m Aakash Kumar, a 3rd-year Computer Science student and Python Backend Developer. I specialize in Flask, Django, and database management with PostgreSQL, MySQL, and SQLite. I’m passionate about building efficient, scalable web applications and learning more about DevOps and real-time features like WebSockets. I’m constantly honing my skills and looking for opportunities to create impactful solutions.
+    </p>
+    <div class="cta-buttons">
+      <a href="#projects" class="btn">View My Work</a>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </div>
+</div>
+{% endblock hero %}
+
+
+{% block about %}
+<section id="about" class="about-section">
+  <h2>About Me</h2>
+  <div class="about-content">
+    <p>
+      I’m <strong>Aakash Kumar</strong>, a passionate third-year Computer Science & Engineering student from Bihar, India. I specialize in backend and real-time web development, with hands-on experience in building efficient and scalable applications using <strong>Python, Flask, Django,</strong> and <strong>SQLAlchemy</strong>.
+    </p>
+    <p>
+      My key strengths include creating secure role-based systems, dynamic dashboards, and integrating geolocation-based features. I’ve contributed to impactful projects like <strong>Wesalvator</strong>, an animal rescue platform with real-time volunteer tracking, and recently completed a backend internship at <strong>Infosys Springboard</strong> where I built secure systems and analytics dashboards.
+    </p>
+    <p>
+      I’m proficient in tools and technologies like <strong>Redis, WebSockets, Mapbox, Git, Linux, Nginx, Pandas, Plotly,</strong> and comfortable working with databases such as <strong>PostgreSQL, MySQL,</strong> and <strong>SQLite</strong>. I’m currently exploring DevOps practices and eager to solve real-world problems through impactful tech.
+    </p>
+    <p>
+      Outside of coding, I enjoy learning new technologies, collaborating on open-source projects, and constantly pushing myself to grow as a developer.
+    </p>
+
+
+  </div>
+</section>
+{% endblock about %}
+
+
+{% block project %}
+<section id="projects">
+  <h2>My Projects</h2>
+  <p>Check out some of the projects I've worked on!</p>
+  <div class="project-list">
+    <!-- Wesalvator -->
+    <div class="project-item">
+      <div class="image-placeholder">
+        <img src="{% static "core/images/wesalvator_logo.png" %}" alt="Wesalvator">
+      </div>
+      <h3>Wesalvator</h3>
+      <p>A platform to rescue injured animals.</p>
+      <a href="link-to-wesalvator" target="_blank" class="project-link">View Project</a>
+    </div>
+    <!-- Gate Pass System -->
+    <div class="project-item">
+      <div class="image-placeholder">
+        <img src="{% static "core/images/gate_pass.png" %}" alt="Gate Pass System">
+      </div>
+      <h3>Gate Pass System</h3>
+      <p>A system for managing hostel gate passes with approval workflow.</p>
+      <a href="https://project1.space" target="_blank" class="project-link">View Project</a>
+    </div>
+    <!-- Agile Project Management Dashboard -->
+    <div class="project-item">
+      <div class="image-placeholder">
+        <img src="{% static "core/images/agile_project.png" %}" alt="Agile Project Management Dashboard">
+      </div>
+      <h3>Agile Project Management Dashboard</h3>
+      <p>An intuitive dashboard for managing Agile projects and tasks.</p>
+      <a href="https://agile-pm-dashboard.onrender.com" target="_blank" class="project-link">View Project</a>
+    </div>
+    <!-- Blog App -->
+    <div class="project-item">
+      <div class="image-placeholder">
+        <img src="{% static "core/images/blog_app.png" %}" alt="Blog App">
+      </div>
+      <h3>Blog App</h3>
+      <p>A simple blog application to share articles and insights.</p>
+      <a href="https://one00-days-python-292o.onrender.com/" target="_blank" class="project-link">View Project</a>
+    </div>
+  </div>
+</section>
+{% endblock project %}
+
+
+{% block social %}
+<section id="contact">
+  <h2>Contact Me</h2>
+  <ul class="contact-list">
+    <p>Let's connect and create something amazing together!</p>
+    <li>
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:aakashkumarpy@gmail.com">aakashkumarpy@gmail.com</a>
+    </li>
+    <li>
+      <i class="fab fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/aakash-kumar-50751a249/" target="_blank">LinkedIn</a>
+    </li>
+    <li>
+      <i class="fab fa-github"></i>
+      <a href="https://github.com/aakash1v" target="_blank">GitHub</a>
+    </li>
+  </ul>
+</section>
+{% endblock social %}

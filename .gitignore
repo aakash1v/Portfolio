@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.python-version
+
+# Django migrations
+*/migrations/
+!*/migrations/__init__.py
+
+# SQLite database
+*.sqlite3
+
+# Logs
+*.log
+
+# Media and static files (if generated or uploaded)
+media/
+staticfiles/
+static/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+*.iml
+
+# Secret settings (if separated)
+.env
+*.env
+
+# MacOS
+.DS_Store
+
+# Test coverage
+htmlcov/
+.coverage
+coverage.xml
+.cache
+nosetests.xml
+pytest_cache/
+
+# Docker
+*.pid
+*.db
+*.sock
+*.egg-info/
+dist/
+build/
