@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url("{% static 'core/images/bg3.jpg' %}");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  position: relative;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+}
+
+.hero .container {
+  margin: auto;
+  width: 60%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px;
+}
+
+.hero img {
+  max-height: 300px;
+  margin-right: 40px;
+}
+
+.hero .content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero .content h1, p {
+  margin-bottom: 20px;
+}
+
+.hero .content p {
+  backdrop-filter: blur(5000px);
+}
+
+.hero .content a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 4px 7px;
+  text-align: center;
+}
+
+.hero .content a:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+/* Main section */#projects {
+  padding: 40px 100px;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#projects p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-item {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-placeholder img:hover {
+  transform: scale(1.05);
+}
+
+.project-item h3 {
+  margin: 15px 0;
+  font-size: 24px;
+}
+
+.project-item p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.project-link {
+  color: #f5a623;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #f5a623;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #f5a623;
+  color: white;
+}
+
+
+/* Footer */
+footer {
+  margin: 50px 0;
+  text-align: center;
+}
+
+/* Contact section */
+#contact {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-top: 50px;
+  padding: 40px 60px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+}
+
+#contact h2 {
+  margin-bottom: 20px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact-list li {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-list li i {
+  margin-right: 10px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.contact-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.contact-list li a:hover {
+  color: #f5a623;
+}
+
+
+/* Ensure hero content stays centered on all screen sizes */
+.hero .content {
+  align-items: center;
+  text-align: center;
+}
+
+/* Add this if your about section has a separate ID or class */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Optional: Typography for about section */
+#about h2, #about p {
+  margin-bottom: 20px;
+}
+
+/* Improve padding and stacking for smaller devices */
+@media (max-width: 768px) {
+  #about {
+    padding: 30px 15px;
+  }
+
+  .hero .content h1 {
+    font-size: 24px;
+  }
+
+  .hero .content p {
+    font-size: 16px;
+  }
+
+  .project-item h3 {
+    font-size: 20px;
+  }
+
+  .project-item p {
+    font-size: 14px;
+  }
+
+  .project-link {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  #projects h2 {
+    font-size: 28px;
+  }
+
+  #projects p {
+    font-size: 16px;
+  }
+
+  .contact-list li {
+    font-size: 16px;
+  }
+
+  .contact-list li i {
+    font-size: 20px;
+  }
+}
+  
+
+/* Responsive styling for smaller devices */
+@media (max-width: 768px) {
+  .hero .container {
+    width: 90%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero img {
+    max-height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .hero .content {
+    padding: 20px;
+  }
+
+  #projects .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  #contact {
+    padding: 20px 20px;
+  }
+
+  footer {
+    margin: 30px;
+  }
+}

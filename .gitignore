@@ -26,7 +26,6 @@ ENV/
 # Media and static files (if generated or uploaded)
 media/
 staticfiles/
-static/
 
 # VS Code
 .vscode/
