@@ -22,6 +22,8 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy project files
 COPY . /code/
 
+RUN python manage.py collectstatic --noinput
+
 # Expose port
 EXPOSE 8000
 
