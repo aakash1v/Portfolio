@@ -27,7 +27,7 @@ export default function Home() {
 
 function MyDetails() {
   return (
-    <div className="md:bg-purple-600 rounded-xl md:px-4 md:py-4 md:w-[650px] slide-in-right ">
+    <div className="md:bg-purple-600 bg-gray-300 px-1 px-3 rounded-xl md:px-4 md:py-4 md:w-[650px] slide-in-right ">
       <h1 className="text-xl md:text-5xl font-extrabold mb-4 drop-shadow-lg tracking-wider">
         Hi, I'm Aakash Kumar
       </h1>
