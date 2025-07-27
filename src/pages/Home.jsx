@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="min-h-screen flex justify-center flex-col md:justify-end items-start text-center px-6 py-5 md:px-12 text-white bg-gray-400"
+      className="min-h-screen flex justify-center flex-col md:justify-end items-start text-center px-6 py-5 md:px-12 text-white bg-gray-400 overflow-scroll"
     >
       <div className="absolute bottom-[30px] md:right-[35px] flex items-center gap-3">
         <IoArrowForwardCircleSharp className="text-purple-800 size-10 animate-bounce" />
