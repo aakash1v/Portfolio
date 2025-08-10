@@ -9,7 +9,7 @@ pipeline {
         stage('Pull Latest Code') {
             steps {
                 git branch: 'main',
-                    url: 'git@github.com:aakash1v/Portfolio.git'
+                    url: 'https://github.com/aakash1v/Portfolio.git'
             }
         }
 
