@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Project from "./pages/Project";
 import AppLayout from "./ui/AppLayout";
 import PageNotFound from "./ui/PageNotFound";
+import Experience from "./pages/Experience";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
           <Route index element={<Navigate replace to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/projects" element={<Project />} />
+          <Route path="/experience" element={<Experience />} />
         </Route>
-        <Route path="*" element={<PageNotFound/>}/>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

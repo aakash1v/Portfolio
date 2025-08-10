@@ -1,46 +1,53 @@
 import React, { useState } from "react";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
-
-import "./Home.css";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
-  const [myDetails, setMyDetails] = useState(false);
+  const [myDetails, setMyDetails] = useState(true);
 
   return (
     <section
       id="home"
-      className="min-h-screen flex justify-center flex-col md:justify-end items-start text-center px-6 py-5 md:px-12 text-white bg-gray-400 overflow-scroll"
+      className="relative min-h-screen flex justify-center flex-col md:justify-center items-center px-6 md:px-12 bg-gradient-to-br from-purple-900 via-gray-800 to-black text-white"
     >
-      <div className="absolute bottom-[30px] md:right-[35px] flex items-center gap-3">
-        <IoArrowForwardCircleSharp className="text-purple-800 size-10 animate-bounce" />
+      {/* Floating Profile Icon */}
+      <div className="absolute bottom-8 md:right-10 flex items-center gap-3">
+        <IoArrowForwardCircleSharp className="text-purple-400 size-10 animate-bounce" />
         <img
-          className="w-[70px] rounded-full hover:border-purple-400 border-[1.5px] hover:border-4"
+          className="w-[70px] rounded-full border-2 border-transparent hover:border-purple-400 transition-all duration-300 cursor-pointer"
           src="face.png"
-          alt="asta-image"
+          alt="aakash-face"
           onClick={() => setMyDetails(!myDetails)}
         />
       </div>
-      {myDetails ? <MyDetails /> : null}
+
+      {/* Details Card */}
+      <AnimatePresence>
+        {myDetails && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.4 }}
+            className="bg-white/10 backdrop-blur-lg shadow-lg px-6 py-6 rounded-2xl max-w-2xl text-center border border-purple-500/30"
+          >
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-purple-300">
+              Hi, I'm Aakash Kumar
+            </h1>
+            <p className="text-gray-200 leading-relaxed text-lg">
+              I'm a final-year Computer Engineering student passionate about
+              full-stack web development, Python, and Linux. I love building
+              scalable web applications using Flask, FastAPI, Django, React, and
+              Tailwind CSS.  
+              Obsessed with clean code, backend systems, and developer tools
+              like tmux & Neovim.  
+              Currently sharpening my skills through real-world projects and
+              experimenting with new workflows.
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
 
-function MyDetails() {
-  return (
-    <div className="bg-purple-600 px-1 px-3 rounded-xl md:px-4 md:py-4 md:w-[650px] slide-in-right ">
-      <h1 className="text-xl md:text-5xl font-extrabold mb-4 drop-shadow-lg tracking-wider">
-        Hi, I'm Aakash Kumar
-      </h1>
-      <p className="max-w-xl mb-8 text-lg md:text-[14px] font-thin  drop-shadow-md md:text-stone-100">
-        I'm a final-year Computer Engineering student passionate about
-        full-stack web development, Python, and Linux. I’m learning to build
-        scalable web applications using frameworks like Flask, FastAPI, Django,
-        and React with Tailwind CSS. I enjoy working with clean, maintainable
-        code and exploring backend systems, automation, and developer tools.
-        Currently, I'm focused on improving my skills through real-world
-        projects while constantly learning and refining my workflow with tools
-        like tmux and Neovim.
-      </p>
-    </div>
-  );
-}

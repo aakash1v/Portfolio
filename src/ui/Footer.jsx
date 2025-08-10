@@ -1,54 +1,54 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 ">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:justify-between space-y-6 md:space-y-0">
-        {/* Left section: Contact info */}
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl font-bold text-white mb-2">Contact Me</h2>
-          <p className="mb-4 text-lg max-w-md">
-            Let's connect and create something amazing together!
-          </p>
+    <footer className="bg-gradient-to-br from-gray-950 to-black text-gray-300 py-10 border-t border-purple-800/30">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        {/* Title */}
+        <h2 className="text-2xl font-bold text-purple-400 mb-3">
+          Contact Me
+        </h2>
+        <p className="mb-5 text-gray-400">
+          Let's connect and create something amazing together!
+        </p>
+
+        {/* Email */}
+        <p className="mb-6">
           <a
             href="mailto:aakashkumarpy@gmail.com"
-            className="inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-600 transition"
+            className="underline hover:text-purple-300 transition-all duration-300"
           >
-            <FaEnvelope />
-            <span>aakashkumarpy@gmail.com</span>
+            aakashkumarpy@gmail.com
           </a>
-        </div>
+        </p>
 
-        {/* Right section: Social links */}
-        <div className="flex space-x-8">
+        {/* Social Links */}
+        <div className="flex justify-center gap-8 text-purple-400 text-lg font-medium">
           <a
             href="https://www.linkedin.com/in/aakash-kumar-50751a249/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="flex items-center space-x-2 text-gray-300 hover:text-indigo-400 transition"
+            className="hover:text-purple-300 transition-all duration-300"
           >
-            <FaLinkedin size={24} />
-            <span className="hidden sm:inline font-semibold">LinkedIn</span>
+            LinkedIn
           </a>
           <a
             href="https://github.com/aakash1v"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="flex items-center space-x-2 text-gray-300 hover:text-indigo-400 transition"
+            className="hover:text-purple-300 transition-all duration-300"
           >
-            <FaGithub size={24} />
-            <span className="hidden sm:inline font-semibold">GitHub</span>
+            GitHub
           </a>
         </div>
-      </div>
 
-      <div className="mt-10 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm select-none">
-        &copy; {new Date().getFullYear()} Aakash Kumar. All rights reserved.
+        {/* Copyright */}
+        <p className="mt-6 text-sm text-gray-500">
+          © {new Date().getFullYear()} <span className="text-purple-300">Aakash Kumar</span>. All rights reserved.
+        </p>
       </div>
     </footer>
   );
 }
+
 
