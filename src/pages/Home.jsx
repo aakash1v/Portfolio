@@ -54,7 +54,7 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="bg-white/10 backdrop-blur-lg shadow-2xl rounded-2xl w-full max-w-md h-[60vh] md:h-[600px] flex flex-col p-4"
+              className="bg-white/10 backdrop-blur-lg shadow-2xl rounded-2xl w-full max-w-md h-[60vh] md:h-[450px] flex flex-col p-4"
             >
               <Chatbot />
             </motion.div>
