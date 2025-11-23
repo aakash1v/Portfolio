@@ -1,24 +1,26 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Project from "./pages/Project";
-import AppLayout from "./ui/AppLayout";
-import PageNotFound from "./ui/PageNotFound";
-import Experience from "./pages/Experience";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route index element={<Navigate replace to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/projects" element={<Project />} />
-          <Route path="/experience" element={<Experience />} />
-        </Route>
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="bg-black min-h-screen">
+      <Navbar />
+      <Hero />
+      <Skills />
+      <Projects />
+      <Experience />
+      <About />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
 
 export default App;
+
