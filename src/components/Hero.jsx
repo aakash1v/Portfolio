@@ -21,7 +21,7 @@ export default function Hero() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ chatInput: message }),
-        }
+        },
       );
 
       const data = await res.json();
@@ -92,7 +92,7 @@ export default function Hero() {
       </div>
 
       {/* Right Code Block */}
-      <div className="mt-12 md:mt-0 backdrop-blur-sm border border-gray-800 rounded-xl p-6 bg-white/5 w-90 text-green-300">
+      <div className="mt-12 md:mt-0 backdrop-blur-sm border border-gray-800 rounded-xl p-6 bg-white/5 text-green-300 w-[21rem] md:w-[25rem]">
         <pre className="text-sm leading-6">
 {`const configureSystem = (os) => {
   if (os === "Arch Linux") {
@@ -107,4 +107,3 @@ configureSystem("Arch Linux");`}
     </section>
   );
 }
-

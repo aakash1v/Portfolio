@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import FloatingResumeButton from "./components/ResumeButton";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       <About />
       <Contact />
       <Footer />
+
+      {/* floating resume button */}
+      <FloatingResumeButton />
     </div>
   );
 }

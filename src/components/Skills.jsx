@@ -54,11 +54,6 @@ const skills = [
     icon: "☁",
     config: "platform.provider = 'aws_gcp';",
   },
-  {
-    title: "Kubernetes",
-    icon: "⬡",
-    config: "orchestration.cluster = 'managed';",
-  },
 ];
 
 export default function Skills() {
