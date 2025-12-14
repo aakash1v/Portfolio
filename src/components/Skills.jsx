@@ -1,96 +1,101 @@
+import {
+  FaPython,
+  FaDocker,
+  FaLinux,
+  FaReact,
+  FaAws,
+} from "react-icons/fa";
+import {
+  SiDjango,
+  SiFastapi,
+  SiPostgresql,
+  SiNeovim,
+  SiTmux,
+  SiGithubactions,
+} from "react-icons/si";
+
 const skills = [
   {
     title: "Python",
-    icon: "π",
-    config: "language.version = '3.14';",
+    icon: <FaPython />,
+    config: "backend · automation",
   },
   {
     title: "Django",
-    icon: "<>",
-    config: "web.framework = 'async';",
+    icon: <SiDjango />,
+    config: "REST · JWT · RBAC",
   },
   {
     title: "FastAPI",
-    icon: "▭▭",
-    config: "api.speed = 'blazing';",
-  },
-  {
-    title: "Linux",
-    icon: "⌘",
-    config: "os.kernel = 'custom';",
-  },
-  {
-    title: "tmux",
-    icon: "⟠",
-    config: "session.manager = 'active';",
-  },
-  {
-    title: "Neovim",
-    icon: "⟡",
-    config: "editor.config = 'lua';",
-  },
-  {
-    title: "Docker",
-    icon: "⬢",
-    config: "container.engine = 'isolated';",
-  },
-  {
-    title: "React",
-    icon: "✸",
-    config: "frontend.component = 'declarative';",
+    icon: <SiFastapi />,
+    config: "async APIs",
   },
   {
     title: "PostgreSQL",
-    icon: "◫",
-    config: "database.type = 'relational';",
+    icon: <SiPostgresql />,
+    config: "relational DB",
   },
   {
-    title: "CI/CD",
-    icon: "⤓",
-    config: "pipeline.automation = 'true';",
+    title: "React",
+    icon: <FaReact />,
+    config: "component UI",
+  },
+  {
+    title: "Docker",
+    icon: <FaDocker />,
+    config: "containers",
+  },
+  {
+    title: "Linux",
+    icon: <FaLinux />,
+    config: "daily driver",
+  },
+  {
+    title: "tmux",
+    icon: <SiTmux />,
+    config: "workflow",
+  },
+  {
+    title: "Neovim",
+    icon: <SiNeovim />,
+    config: "Lua · LSP",
+  },
+  {
+    title: "CI / CD",
+    icon: <SiGithubactions />,
+    config: "automation",
   },
   {
     title: "Cloud",
-    icon: "☁",
-    config: "platform.provider = 'aws_gcp';",
+    icon: <FaAws />,
+    config: "GCP / AWS",
   },
 ];
 
 export default function Skills() {
   return (
-    <section
-      id="skills"
-      className="px-6 md:px-12 py-20 text-center text-gray-200"
-    >
-      <h2 className="text-4xl font-bold mb-16 text-gray-300 tracking-wider">
-        My Core Skills
+    <section id="skills" className="px-6 md:px-12 py-20">
+      <h2 className="text-4xl font-bold text-center mb-14 text-gray-300 tracking-wider">
+        Core Skills
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-        {skills.map((skill, index) => (
+      <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10">
+        {skills.map((skill, i) => (
           <div
-            key={index}
-            className="bg-[#0b0f10] border border-gray-800 rounded-xl p-6 shadow-lg transition hover:border-green-400 hover:shadow-green-400/20"
+            key={i}
+            className="group flex flex-col items-center text-center
+                       text-gray-400 hover:text-green-400
+                       transition-colors duration-200"
           >
-            {/* Fake Window Header */}
-            <div className="flex space-x-2 mb-4">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-
-            {/* Skill Icon */}
-            <div className="text-5xl mb-4 text-green-400">
+            <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-200">
               {skill.icon}
             </div>
 
-            {/* Skill Title */}
-            <h3 className="text-xl font-semibold text-green-400 mb-2">
+            <h3 className="text-sm font-medium">
               {skill.title}
             </h3>
 
-            {/* Config line */}
-            <p className="text-sm text-green-300">
+            <p className="text-xs text-green-400/70 font-mono mt-1">
               {skill.config}
             </p>
           </div>

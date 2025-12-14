@@ -5,9 +5,15 @@ const projects = [
     id: 1,
     title: "Agile Project Management Dashboard",
     description:
-      "A dashboard for managing Agile projects with authentication, role-based access, and analytics. Built during Infosys Springboard internship.",
-    image: "/agile_project.png",
-    stack: ["Flask", "Bootstrap", "SQLAlchemy", "SQLite", "Plotly", "Pandas", "Google Cloud"],
+      "Agile project dashboard with authentication, role-based access control, and analytics. Built during Infosys Springboard internship.",
+    stack: [
+      "Flask",
+      "SQLAlchemy",
+      "Bootstrap",
+      "Plotly",
+      "Pandas",
+      "GCP",
+    ],
     repo: "https://github.com/aakash1v/Team1",
     demo: "https://p2.project1.space/",
   },
@@ -15,92 +21,102 @@ const projects = [
     id: 2,
     title: "Gate Pass Management System",
     description:
-      "Role-based system for hostel gate passes with approval workflows and secure tracking.",
-    image: "/gate_pass.png",
-    stack: ["Flask", "SQLAlchemy", "SQLite", "Bootstrap", "VPS", "Nginx"],
-    repo: "https://github.com/aakash1v/Minor-project",
-    demo: "https://p1.project1.space",
+      "Role-based gate pass system with JWT authentication, approval workflows, and secure tracking.",
+    stack: [
+      "React",
+      "Django",
+      "DRF",
+      "PostgreSQL",
+      "JWT",
+      "Nginx",
+    ],
+    repo: "https://github.com/aakash1v/Gate-Pass",
+    demo: "https://p4.project1.space",
   },
   {
     id: 3,
-    title: "Hostel Management System",
+    title: "FlexHire",
     description:
-      "A microservices-based full-stack HMS with React, shadcn UI, Django PostgreSQL auth, and Node + MongoDB room APIs.",
-    image: "/hms.png",
-    stack: ["React", "Tailwind", "shadcn UI", "Node.js", "MongoDB", "Django", "PostgreSQL"],
-    repo: "https://github.com/aakash1v/hms",
-    demo: "https://hms.project1.space",
+      "Real-time hiring platform with role-based access, WebSocket updates, and secure REST APIs.",
+    stack: [
+      "React",
+      "Django",
+      "DRF",
+      "PostgreSQL",
+      "WebSockets",
+    ],
+    repo: "https://github.com/aakash1v/flexhire",
+    demo: "https://p3.project1.space",
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-6 md:px-12 py-20 bg-black text-white">
-      <h2 className="text-4xl font-bold text-center mb-16 tracking-widest text-gray-300">
-        Some of my projects <span className="text-green-400">//_</span>
+    <section
+      id="projects"
+      className="px-6 md:px-12 py-20 bg-black text-gray-200"
+    >
+      <h2 className="text-4xl font-bold text-center mb-14 tracking-wider text-gray-300">
+        Projects <span className="text-green-400"></span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto space-y-10">
         {projects.map((p) => (
           <div
             key={p.id}
-            className="bg-[#0b0f10] border border-gray-800 rounded-xl p-6 shadow-lg hover:border-green-400 hover:shadow-green-400/20 transition"
+            className="group border border-gray-800 rounded-lg px-6 py-5
+                       hover:border-green-400 transition-colors"
           >
-            {/* Fake window header */}
-            <div className="flex space-x-2 mb-4">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            {/* Header */}
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-semibold text-green-400">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-gray-400 mt-1 max-w-2xl">
+                  {p.description}
+                </p>
+              </div>
+
+              {/* Actions */}
+              <div className="flex gap-3 text-gray-400">
+                {p.repo && (
+                  <a
+                    href={p.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-green-400 transition"
+                    aria-label="Source Code"
+                  >
+                    <Github size={18} />
+                  </a>
+                )}
+                {p.demo && (
+                  <a
+                    href={p.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-green-400 transition"
+                    aria-label="Live Demo"
+                  >
+                    <ExternalLink size={18} />
+                  </a>
+                )}
+              </div>
             </div>
 
-            {/* Project Image */}
-            <img
-              src={p.image}
-              alt={p.title}
-              className="w-full h-48 object-cover rounded-lg mb-6 opacity-90"
-            />
-
-            {/* Title */}
-            <h3 className="text-xl font-semibold text-green-400 mb-2">{p.title}</h3>
-
-            {/* Description */}
-            <p className="text-gray-300 text-sm leading-relaxed mb-6">{p.description}</p>
-
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            {/* Stack */}
+            <div className="flex flex-wrap gap-2 mt-4">
               {p.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 text-xs rounded-md bg-black border border-green-500 text-green-400"
+                  className="text-xs font-mono px-2 py-1
+                             border border-gray-700 rounded-md
+                             text-green-400/80"
                 >
                   {tech}
                 </span>
               ))}
-            </div>
-
-            {/* Buttons */}
-            <div className="flex gap-4">
-              {p.repo && (
-                <a
-                  href={p.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-green-400 border border-green-400 px-4 py-2 rounded-lg hover:bg-green-400 hover:text-black transition"
-                >
-                  <Github size={16} /> Open Repo
-                </a>
-              )}
-
-              {p.demo && (
-                <a
-                  href={p.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-green-500 text-black px-4 py-2 rounded-lg hover:bg-green-400 transition"
-                >
-                  <ExternalLink size={16} /> Live Demo
-                </a>
-              )}
             </div>
           </div>
         ))}

@@ -1,108 +1,105 @@
 import React from "react";
-import { FaCertificate, FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
+import { FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
 
 export default function Experience() {
   const experiences = [
     {
       title: "Backend Developer",
-      company: "Praccel (Read-Aloud App) – Paleru Technologies Pvt Ltd",
-      date: "Sep 2025 – Present | Remote",
-      file: null, // no certificate for this one (current job)
-
+      company: "Praccel (Read-Aloud App) · Paleru Technologies Pvt Ltd",
+      date: "Sep 2025 – Present · Remote",
+      file: null,
       points: [
-        "Developing RESTful APIs in Django REST Framework powering core features of the Praccel learning platform.",
-        "Customized Django admin panel for non-technical team usage.",
+        "Developing RESTful APIs using Django REST Framework powering core learning features.",
+        "Customized Django Admin for non-technical team workflows.",
         "Built automation scripts for recurring data operations.",
-        "Implemented CI/CD pipeline using GitHub Actions, reducing manual deployment overhead.",
+        "Implemented CI/CD using GitHub Actions to streamline deployments.",
       ],
     },
     {
-      title: "Python/Django Developer Intern",
-      company: "WeSalvator – Animal Rescue Platform",
-      date: "Feb 2025 – May 2025 | Remote",
+      title: "Python / Django Developer Intern",
+      company: "WeSalvator · Animal Rescue Platform",
+      date: "Feb 2025 – May 2025 · Remote",
       file: {
         type: "image",
         src: "/wesalvator-certf.jpg",
-        link: "https://drive.google.com/file/d/1N8w8b7-vhkJKZyY7GpgMjt83rs72mjDR/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1N8w8b7-vhkJKZyY7GpgMjt83rs72mjDR/view",
       },
-
       points: [
-        "Built backend modules using Django REST Framework for rescue tracking & volunteer management.",
-        "Implemented real-time notifications using Django Channels & WebSockets.",
-        "Optimized database queries reducing API latency and improving scalability.",
+        "Built backend modules with Django REST Framework for rescue tracking and volunteers.",
+        "Implemented real-time notifications using Django Channels and WebSockets.",
+        "Optimized database queries to reduce API latency and improve scalability.",
       ],
     },
     {
       title: "Scrum Master & Backend Developer Intern",
       company: "Infosys Springboard",
-      date: "Dec 2024 – Feb 2025 | Remote",
+      date: "Dec 2024 – Feb 2025 · Remote",
       file: {
         type: "image",
         src: "/infy.jpg",
-        link: "https://drive.google.com/file/d/170-kTkTb8VoByEBe4Dyn7Cf14eKElK8W/view?usp=sharing",
+        link: "https://drive.google.com/file/d/170-kTkTb8VoByEBe4Dyn7Cf14eKElK8W/view",
       },
-
       points: [
-        "Facilitated Agile ceremonies and coordinated daily stand-ups.",
-        "Developed secure RBAC authentication with Flask & SQLAlchemy.",
-        "Built analytics dashboard using Pandas & Plotly with session-based auth.",
-        "Deployed production-ready backend on GCP using Gunicorn & Nginx.",
-        "Built a complete gate-pass digitization system deployed on Linux VPS.",
+        "Facilitated Agile ceremonies and coordinated sprint workflows.",
+        "Built secure RBAC authentication using Flask and SQLAlchemy.",
+        "Developed analytics dashboard using Pandas and Plotly.",
+        "Deployed production backend on GCP using Gunicorn and Nginx.",
       ],
     },
   ];
 
   return (
-    <section id="experience" className="px-6 md:px-12 py-20 bg-black text-white">
-      <h2 className="text-4xl font-bold text-center mb-16 tracking-widest text-gray-300">
-        //Experience Log <span className="text-green-400">;</span>
+    <section id="experience" className="px-6 md:px-12 py-20 bg-black text-gray-200">
+      {/* Header */}
+      <h2 className="text-3xl font-semibold text-center mb-14 text-gray-300 tracking-wide">
+        experience.log<span className="text-green-400">()</span>
       </h2>
 
-      <div className="max-w-5xl mx-auto space-y-16">
+      <div className="max-w-4xl mx-auto space-y-12">
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className="bg-[#0b0f10] border border-green-800 rounded-lg p-8 shadow-lg"
+            className="group border border-gray-800 rounded-lg px-6 py-5
+                       hover:border-green-400 transition-colors"
           >
             <div className="flex flex-col md:flex-row gap-6">
-
-              {/* Certificate or PDF */}
-              {exp.file?.type === "image" && (
+              {/* Certificate (optional) */}
+              {exp.file && (
                 <a
                   href={exp.file.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="shrink-0"
                 >
-                  <img
-                    src={exp.file.src}
-                    className="w-40 h-40 rounded-lg border border-green-600/30 hover:scale-105 transition"
-                  />
+                  {exp.file.type === "image" ? (
+                    <img
+                      src={exp.file.src}
+                      alt="certificate"
+                      className="w-28 h-28 object-cover rounded-md border border-gray-700
+                                 opacity-80 hover:opacity-100 hover:scale-105 transition"
+                    />
+                  ) : (
+                    <div className="w-28 h-28 flex flex-col items-center justify-center
+                                    border border-gray-700 rounded-md">
+                      <FaFilePdf className="text-green-400 text-3xl mb-1" />
+                      <span className="text-xs text-gray-400 flex items-center gap-1">
+                        View <FaExternalLinkAlt />
+                      </span>
+                    </div>
+                  )}
                 </a>
               )}
 
-              {exp.file?.type === "pdf" && (
-                <a
-                  href={exp.file.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center w-40 h-40 bg-black/30 rounded-lg border border-green-500 hover:scale-105 transition"
-                >
-                  <FaFilePdf className="text-green-400 text-5xl mb-2" />
-                  <span className="flex items-center gap-1 text-green-300 text-xs">
-                    View PDF <FaExternalLinkAlt />
-                  </span>
-                </a>
-              )}
-
-              {/* Text */}
+              {/* Content */}
               <div className="flex-1">
-                <h3 className="text-2xl font-semibold text-green-400">
+                <h3 className="text-lg font-semibold text-green-400">
                   {exp.title}
                 </h3>
-                <p className="text-gray-400">{exp.company}</p>
-                <p className="text-sm text-green-300 mb-4">{exp.date}</p>
 
-                <ul className="list-disc list-inside text-gray-300 space-y-2 leading-relaxed">
+                <p className="text-sm text-gray-400">{exp.company}</p>
+                <p className="text-xs text-green-300 mb-4">{exp.date}</p>
+
+                <ul className="list-disc list-inside text-sm text-gray-300 space-y-2 leading-relaxed">
                   {exp.points.map((p, i) => (
                     <li key={i}>{p}</li>
                   ))}

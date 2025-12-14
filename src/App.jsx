@@ -16,8 +16,6 @@ function App() {
       <Skills />
       <Projects />
       <Experience />
-      <About />
-      <Contact />
       <Footer />
 
       {/* floating resume button */}

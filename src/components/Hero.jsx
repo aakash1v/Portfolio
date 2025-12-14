@@ -7,32 +7,35 @@ export default function Hero() {
   const [reply, setReply] = useState("");
   const [loading, setLoading] = useState(false);
   const [muted, setMuted] = useState(false);
-  const [voiceReady, setVoiceReady] = useState(false);
-  const [selectedVoice, setSelectedVoice] = useState(null);
+  const [voice, setVoice] = useState(null);
 
-  // Load voices in a Firefox-safe manner
   useEffect(() => {
-    let interval;
-
     const loadVoices = () => {
       const voices = window.speechSynthesis.getVoices();
       if (voices.length > 0) {
-        const englishVoice =
+        const english =
           voices.find((v) => v.lang.includes("en")) || voices[0];
-        setSelectedVoice(englishVoice);
-        setVoiceReady(true);
-        clearInterval(interval);
+        setVoice(english);
       }
     };
 
     loadVoices();
-
-    interval = setInterval(loadVoices, 200);
-
     window.speechSynthesis.onvoiceschanged = loadVoices;
-
-    return () => clearInterval(interval);
   }, []);
+
+  const speakText = (text) => {
+    if (!text || !voice) return;
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.voice = voice;
+    utterance.rate = 1;
+    utterance.pitch = 1;
+
+    setTimeout(() => {
+      window.speechSynthesis.speak(utterance);
+    }, 50);
+  };
 
   const handleChat = async () => {
     if (!message.trim()) return;
@@ -52,123 +55,107 @@ export default function Hero() {
 
       const data = await res.json();
       const botReply = data.text || "Sorry, I didn't get that.";
-
       setReply(botReply);
-
-      if (!muted) speak(botReply);
-    } catch (error) {
+      if (!muted) speakText(botReply);
+    } catch {
       const err = "Oops! Something went wrong.";
       setReply(err);
-      if (!muted) speak(err);
+      if (!muted) speakText(err);
     }
 
     setMessage("");
     setLoading(false);
   };
 
-  const speak = (text) => {
-    if (!voiceReady || !selectedVoice) return;
-
-    window.speechSynthesis.cancel();
-
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.voice = selectedVoice;
-    utter.pitch = 1;
-    utter.rate = 1;
-    utter.volume = 1;
-
-    setTimeout(() => {
-      window.speechSynthesis.speak(utter);
-    }, 100);
-  };
-
   const toggleMute = () => {
-    setMuted((m) => !m);
+    setMuted(!muted);
     window.speechSynthesis.cancel();
   };
 
   return (
     <section
       id="hero"
-      className="px-6 md:px-12 py-28 flex flex-col md:flex-row items-center justify-between"
+      className="px-6 md:px-12 py-28 flex flex-col md:flex-row items-center justify-between gap-14"
     >
-      {/* Left Section */}
+      {/* Left */}
       <div className="max-w-xl">
         <h1 className="text-5xl font-bold text-green-400">
           Aakash <span className="text-white">—</span>
         </h1>
 
         <p className="text-gray-300 mt-4 text-lg">
-          // Building robust systems, one line of code at a time.
+          Backend-focused developer building reliable systems,
+          clean APIs, and scalable infrastructure.
         </p>
 
-        {/* MINI CHATBOX */}
+        {/* Mini Chat */}
         <div className="mt-6 w-full max-w-md">
           {reply && (
-            <div className="mb-3 bg-black border border-green-500/40 text-green-300 p-3 rounded-lg text-sm">
-              <div className="flex justify-between">
-                <span>{reply}</span>
-
-                <button
-                  onClick={toggleMute}
-                  className="text-green-400 hover:text-green-200 transition"
-                >
-                  {muted ? <FaVolumeMute size={18} /> : <FaVolumeUp size={18} />}
-                </button>
-              </div>
-
-              {/* Proper placement below message */}
-              {!voiceReady && (
-                <p className="text-xs text-green-400 mt-2 opacity-70">
-                  Loading voice… please wait.
-                </p>
-              )}
+            <div className="mb-3 bg-black border border-green-500/40 text-green-300 p-3 rounded-lg text-sm flex justify-between gap-3">
+              <span>{reply}</span>
+              <button
+                onClick={toggleMute}
+                className="text-green-400 hover:text-green-200 transition"
+              >
+                {muted ? <FaVolumeMute /> : <FaVolumeUp />}
+              </button>
             </div>
           )}
 
-          {/* Input Row */}
-          <div className="flex items-center gap-2">
+          <div className="flex gap-2">
             <input
-              type="text"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleChat()}
-              placeholder="Ask me something…"
-              className="
-                flex-1 px-3 py-2 bg-[#0b0f10] 
-                border border-green-500/40 
-                text-green-300 text-sm rounded-lg 
-                focus:outline-none focus:border-green-400
-              "
+              placeholder="Ask about my work, skills, or projects…"
+              className="flex-1 px-3 py-2 bg-[#0b0f10]
+                         border border-green-500/40
+                         text-green-300 text-sm rounded-lg
+                         focus:outline-none focus:border-green-400"
             />
 
             <button
               onClick={handleChat}
-              disabled={loading || !voiceReady}
-              className="
-                bg-green-500 hover:bg-green-400 
-                text-black p-2 rounded-lg transition 
-                disabled:opacity-50
-              "
+              disabled={loading || !voice}
+              className="bg-green-500 text-black p-2 rounded-lg
+                         hover:bg-green-400 transition disabled:opacity-50"
             >
               {loading ? "..." : <IoIosSend size={22} />}
             </button>
           </div>
+
+          {!voice && (
+            <p className="text-green-300 text-xs mt-2 opacity-70">
+              Loading voice…
+            </p>
+          )}
         </div>
       </div>
 
-      {/* Right Block */}
-      <div className="mt-12 md:mt-0 backdrop-blur-sm border border-gray-800 rounded-xl p-6 bg-white/5 text-green-300 w-[21rem] md:w-[25rem]">
-        <pre className="text-sm leading-6">
-{`const configureSystem = (os) => {
-  if (os === "Arch Linux") {
-    pacman -Syu // yay -S neovim tmux
-  } else {
-    console.log("Unsupported OS");
-  }
-};
-configureSystem("Arch Linux");`}
-        </pre>
+      {/* Right – Profile Summary */}
+      <div className="w-full max-w-md border border-gray-800 rounded-xl p-6 bg-[#0b0f10]">
+        <p className="text-sm text-green-400 font-mono mb-3">
+          about.me
+        </p>
+
+        <ul className="text-gray-300 text-sm space-y-3 leading-relaxed">
+          <li>
+            • Backend developer focused on Django, DRF, and FastAPI
+          </li>
+          <li>
+            • Experience with real-time systems using WebSockets
+          </li>
+          <li>
+            • Comfortable with Linux, Docker, CI/CD, and cloud deployments
+          </li>
+          <li>
+            • Strong believer in clean architecture and long-term maintainability
+          </li>
+        </ul>
+
+        <div className="mt-5 text-xs text-gray-400 font-mono">
+          current_focus = "backend · infra · scalability"
+        </div>
       </div>
     </section>
   );

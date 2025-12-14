@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
+        // <a href="#contact" className="hover:text-green-400 transition">Contact</a>
+        // <a href="#about" className="hover:text-green-400 transition">About</a>
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -25,8 +27,6 @@ export default function Navbar() {
         <a href="#skills" className="hover:text-green-400 transition">Skills</a>
         <a href="#projects" className="hover:text-green-400 transition">Projects</a>
         <a href="#experience" className="hover:text-green-400 transition">Experience</a>
-        <a href="#about" className="hover:text-green-400 transition">About</a>
-        <a href="#contact" className="hover:text-green-400 transition">Contact</a>
       </div>
 
       {/* Mobile Hamburger */}
