@@ -30,7 +30,7 @@ const projects = [
       "JWT",
       "Nginx",
     ],
-    repo: "https://github.com/aakash1v/Gate-Pass",
+    repo: "https://github.com/aakash1v/Gate-Pass-backend",
     demo: "https://p4.project1.space",
   },
   {
@@ -45,7 +45,7 @@ const projects = [
       "PostgreSQL",
       "WebSockets",
     ],
-    repo: "https://github.com/aakash1v/flexhire",
+    repo: "https://github.com/aakash1v/FlexHireBackend",
     demo: "https://p3.project1.space",
   },
 ];
