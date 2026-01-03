@@ -15,7 +15,7 @@ const projects = [
       "GCP",
     ],
     repo: "https://github.com/aakash1v/Team1",
-    demo: "https://p2.project1.space/",
+    demo: "https://p2.aakash1.online/",
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ const projects = [
       "WebSockets",
     ],
     repo: "https://github.com/aakash1v/FlexHireBackend",
-    demo: "https://p3.project1.space",
+    demo: "https://p3.aakash1.online",
   },
 ];
 
